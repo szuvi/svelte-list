@@ -1,5 +1,3 @@
-<svelte:options immutable={true} />
-
 <script>
   export let user;
   export let onActivate;
