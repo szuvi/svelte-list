@@ -1,9 +1,9 @@
 <script>
   import { onMount } from "svelte";
-  import { getUsers } from "../api/getUsers";
   import Loader from "../Components/Loader.svelte";
   import TableHead from "../Components/TableHead.svelte";
   import UserRow from "../Components/UserRow.svelte";
+  import getUsers from "../api/getUsers";
   import { USER_TABLE_HEADERS } from "../consts";
 
   let users = [];
