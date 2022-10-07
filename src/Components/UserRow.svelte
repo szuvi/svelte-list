@@ -1,3 +1,4 @@
+<svelte:options immutable={true} />
 <script>
   export let user;
   import { createEventDispatcher } from "svelte";
