@@ -1,13 +1,12 @@
+<svelte:options immutable={true} />
+
 <script>
   export let user;
-  import { createEventDispatcher } from "svelte";
+  export let onActivate;
+  export let onDelete;
 
-  const dispatch = createEventDispatcher();
-
-  const activateHandler = () => {
-    dispatch("activate", user.id);
-  };
-  const deleteHandler = () => dispatch("delete", user.id);
+  const activateHandler = () => onActivate(user.id);
+  const deleteHandler = () => onDelete(user.id);
 </script>
 
 <tr>

@@ -12,19 +12,17 @@
     users = await getUsers();
   });
 
-  const toggleActive = ({ detail }) => {
+  const toggleActive = (id) => {
     users = users.map((user) => {
-      console.log(detail);
-      if (user.id === detail) {
-        console.log("I WORK");
+      if (user.id === id) {
         return { ...user, active: !user.active };
       }
       return user;
     });
   };
 
-  const deleteHandler = ({ detail }) => {
-    users = users.filter((user) => user.id !== detail);
+  const deleteHandler = (id) => {
+    users = users.filter((user) => user.id !== id);
   };
 </script>
 
@@ -35,7 +33,7 @@
     <TableHead headers={USER_TABLE_HEADERS} />
     <tbody>
       {#each users as user (user.id)}
-        <UserRow {user} on:activate={toggleActive} on:delete={deleteHandler} />
+        <UserRow {user} onActivate={toggleActive} onDelete={deleteHandler} />
       {/each}
     </tbody>
   </table>
