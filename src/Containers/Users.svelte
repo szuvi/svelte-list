@@ -3,13 +3,13 @@
   import Loader from "../Components/Loader.svelte";
   import TableHead from "../Components/TableHead.svelte";
   import UserRow from "../Components/UserRow.svelte";
-  import getUsers from "../api/getUsers";
+  import api from "../api/getUsers";
   import { USER_TABLE_HEADERS } from "../consts";
 
   let users = [];
 
   onMount(async () => {
-    users = await getUsers();
+    users = await api.getUsers();
   });
 
   const toggleActive = (id) => {
